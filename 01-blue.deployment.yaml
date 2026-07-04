@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-blue
+ labels:
+  project: roboshop
+  tier: frontend
+  component: frontend
+  version: blue
+spec:
+ replicas: 4
+ selector:
+  matchLabels:
+   project: roboshop
+   tier: frontend
+   component: frontend
+ template:
+  metadata:
+   labels:
+    project: roboshop
+    tier: frontend
+    component: frontend
+  spec:
+   containers:
+    - name: nginx-blue
+      image: sivamedam/blue-green:0.0.1
