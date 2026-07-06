@@ -10,10 +10,11 @@ metadata:
 spec:
  replicas: 4
  selector:
-  project: roboshop
-  tier: frontend
-  component: frontend
-  version: green
+  matchLabels:
+   project: roboshop
+   tier: frontend
+   component: frontend
+   version: green
  template:
   metadata:
    project: roboshop
