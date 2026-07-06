@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-preview
+ labels:
+  project: roboshop
+  tier: frontend
+  component: frontend
+  version: green
+spec:
+ replicas: 4
+ selector:
+  project: roboshop
+  tier: frontend
+  component: frontend
+  version: green
+ template:
+  metadata:
+   project: roboshop
+   tier: frontend
+   component: frontend
+   version: green
+  spec:
+   containers:
+    - name: nginx-green
+      image: sivamedam/blue-green:0.0.2

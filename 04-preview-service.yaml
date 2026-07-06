@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: nginx-preview
+ labels:
+  project: roboshop
+  tier: frontend
+  component: frontend
+  version: green
+spec:
+ selector:
+  project: roboshop
+  tier: frontend
+  component: frontend
+  version: green
+ ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
