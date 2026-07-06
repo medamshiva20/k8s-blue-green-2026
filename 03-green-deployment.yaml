@@ -17,10 +17,11 @@ spec:
    version: green
  template:
   metadata:
-   project: roboshop
-   tier: frontend
-   component: frontend
-   version: green
+   labels:
+    project: roboshop
+    tier: frontend
+    component: frontend
+    version: green
   spec:
    containers:
     - name: nginx-green
